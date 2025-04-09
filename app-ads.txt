@@ -52,7 +52,6 @@ velismedia.com, 725, RESELLER
 video.unrulymedia.com, 3630748062, RESELLER, a670c89d4a324e47
 webeyemob.com, 70097, RESELLER
 xandr.com, 7353, RESELLER
-google.com, pub-3940256099942544, DIRECT, f08c47fec0942fa0
 adelement.com, 30167, RESELLER
 admanmedia.com, 613, RESELLER
 admixplay.com, 2012, RESELLER
@@ -78,8 +77,6 @@ criteo.com, B-057601, RESELLER, 9fac4a4a87c2a44f
 criteo.com, B-057955, RESELLER, 9fac4a4a87c2a44f
 criteo.com, B-063105, RESELLER, 9fac4a4a87c2a44f
 exchange.admazing.co, AM3, RESELLER
-google.com, pub-6228344868991805, RESELLER
-google.com, pub-6228344868991805, RESELLER, f08c47fec0942fa0
 indexexchange.com, 186081, RESELLER, 50b1c356f2c5c8fc
 indexexchange.com, 198417, RESELLER, 50b1c356f2c5c8fc
 indexexchange.com, 199195, RESELLER, 50b1c356f2c5c8fc
