@@ -1,65 +1,153 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Daily Countdown-Reminder&Notes</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<meta name="description" content="Privacy policy and info for Daily Countdown-Reminder & Notes app" />
-		<style>
-			/* Page-specific readable container and typography tweaks */
-			.privacy-container{max-width:900px;margin:36px auto;padding:28px;background:var(--bg);border-radius:10px;box-shadow:0 8px 30px rgba(10,10,10,0.06);}
-			.privacy-container h3{margin-top:1.25rem;margin-bottom:.5rem;font-weight:700}
-			.privacy-container p, .privacy-container li{line-height:1.7;color:rgba(0,0,0,0.85);font-size:1rem}
-			.privacy-container ul{margin-left:1.25rem}
-			.header-center{text-align:center;padding-top:28px}
-			@media (max-width:640px){.privacy-container{margin:18px;padding:18px}}
-		</style>
-	</head>
-	<body class="is-preload">
-<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-								<article class="post featured">
-									<header class="major header-center">
-										<h2>Color Countdown - Event Timer</h2>
-										<p class="subtitle">Privacy information and policies for the free app by Calculator Labs.</p>
-									</header>
-									<section class="privacy-container">
-										<h3>Overview</h3>
-										<p>Calculator Labs provides the Color Countdown - Event Timer app free of charge. This page explains how personal information is handled when you use the Service.</p>
-										<h3>Information Collection & Use</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Privacy Policy for Daily Countdown - Event Widget.">
+  <title>Privacy Policy — Daily Countdown - Event Widget</title>
+  <style>
+:root { --paper:#f8f7f4; --ink:#242522; --muted:#6d7067; --purple:#7055c5; --line:#dedfd7; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:28px; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible,summary:focus-visible { outline:3px solid var(--purple); outline-offset:4px; border-radius:4px; }
+.shell { width:min(1160px,calc(100% - 96px)); margin-inline:auto; }
+.skip-link { position:fixed; top:-80px; left:12px; padding:12px 20px; background:var(--ink); color:white; z-index:10; }
+.skip-link:focus { top:12px; }
+.site-header { height:104px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+.brand { display:inline-flex; align-items:center; gap:11px; font-size:30px; font-weight:750; letter-spacing:-1.8px; }
+.brand-dot { color:var(--purple); }
+.brand-symbol { position:relative; display:grid; place-items:center; width:38px; height:38px; background:var(--purple); color:#fff; border-radius:12px; font-size:31px; line-height:1; font-weight:600; }
+.brand-symbol span { position:absolute; font-size:13px; top:4px; right:5px; color:#d9f39a; }
+.site-header nav { display:flex; gap:30px; font-size:13px; font-weight:550; }
+.site-header nav a { padding-block:14px; }
+.site-header nav a:hover,.site-footer a:hover { color:var(--purple); }
+.back-link { display:inline-flex; align-items:center; gap:10px; padding-block:12px; margin-top:23px; font-size:12px; color:var(--muted); }
+.document-hero { padding:29px 0 34px; max-width:860px; }
+.eyebrow { margin:0 0 14px; font-size:10px; font-weight:650; letter-spacing:1.6px; color:var(--purple); line-height:1.7; }
+h1 { margin:0 0 17px; font-size:clamp(38px,5vw,58px); letter-spacing:-2.5px; line-height:1.12; font-weight:650; }
+.document-app { margin:0 0 9px; font-size:19px; line-height:1.5; font-weight:550; letter-spacing:-.4px; }
+.document-summary { margin:0; max-width:700px; font-size:14px; color:var(--muted); line-height:1.8; }
+.document-meta { display:flex; gap:12px 28px; flex-wrap:wrap; margin-top:24px; font-size:11px; color:var(--muted); }
+.document-meta strong { color:var(--ink); font-weight:550; margin-right:7px; }
+.document-meta a { text-decoration:underline; text-underline-offset:3px; }
+.document-tabs { display:flex; gap:26px; border-bottom:1px solid var(--line); margin-bottom:36px; }
+.document-tabs a { padding:13px 0; font-size:12px; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px; }
+.document-tabs a[aria-current="page"] { border-color:var(--purple); color:var(--purple); font-weight:650; }
+.document-layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:38px; align-items:start; margin-bottom:54px; }
+.contents { position:sticky; top:28px; }
+.contents summary { display:flex; justify-content:space-between; align-items:center; cursor:pointer; list-style:none; padding:7px 0 16px; font-size:10px; letter-spacing:1.5px; font-weight:650; color:var(--muted); }
+.contents summary::-webkit-details-marker { display:none; }
+.contents summary::after { content:'+'; font-size:17px; }
+.contents[open] summary::after { content:'−'; }
+.contents ol { list-style:none; padding:0; margin:0; }
+.contents a { display:flex; gap:11px; align-items:baseline; padding:9px 0; font-size:12px; line-height:1.6; color:var(--muted); }
+.contents a:hover { color:var(--purple); }
+.section-number { font-size:9px; color:#99998e; min-width:17px; }
+.contents-help { margin-top:26px; padding-top:20px; border-top:1px solid var(--line); font-size:11px; line-height:1.8; color:var(--muted); }
+.contents-help a { color:var(--purple); font-size:11px; overflow-wrap:anywhere; }
+.legal-paper { border:1px solid #e3e2da; border-radius:24px; background:#fffefa; padding:39px 44px; min-width:0; }
+.legal-body { font-size:15px; line-height:1.85; color:#53564e; overflow-wrap:anywhere; }
+.legal-body p { margin:0 0 19px; }
+.legal-body h2 { color:var(--ink); font-size:23px; line-height:1.4; font-weight:600; letter-spacing:-.6px; margin:37px 0 16px; padding-top:28px; border-top:1px solid #e9e8e0; scroll-margin-top:26px; }
+.legal-body h2:first-child { margin-top:0; border:0; padding-top:0; }
+.legal-body strong { color:#373b33; font-weight:650; }
+.legal-body ul { margin:0 0 21px; padding-left:23px; }
+.legal-body li { padding-left:3px; margin:8px 0; }
+.legal-body a { color:var(--purple); text-decoration:underline; text-underline-offset:3px; }
+.legal-body a:hover { color:#48337f; }
+.legal-body .credits a { display:inline-block; margin-bottom:8px; }
+.document-end { border-top:1px solid var(--line); padding-top:24px; margin-top:33px; display:flex; justify-content:space-between; gap:20px; font-size:12px; }
+.document-end a { display:inline-flex; align-items:center; min-height:40px; color:var(--purple); }
+.site-footer { border-top:1px solid var(--line); padding-block:29px 35px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.site-footer p { margin:0; color:var(--muted); font-size:11px; line-height:1.8; }
+.site-footer nav { display:flex; gap:24px; font-size:11px; }
+@media(max-width:1000px) { .shell { width:calc(100% - 64px); } .document-layout { grid-template-columns:185px minmax(0,1fr); gap:26px; } .legal-paper { padding:31px; } }
+@media(max-width:760px) {
+  .shell { width:calc(100% - 40px); } .site-header { height:82px; } .brand { font-size:27px; } .brand-symbol { width:34px; height:34px; font-size:28px; }
+  .site-header nav { gap:20px; font-size:12px; } .document-hero { padding-top:20px; padding-bottom:25px; } h1 { font-size:43px; letter-spacing:-1.8px; }
+  .document-app { font-size:17px; } .document-meta { gap:12px; flex-direction:column; line-height:1.6; } .document-tabs { margin-bottom:22px; }
+  .document-layout { grid-template-columns:minmax(0,1fr); gap:21px; margin-bottom:35px; }
+  .contents { position:static; border:1px solid var(--line); border-radius:15px; padding:12px 18px; } .contents summary { padding:5px 0; min-height:32px; } .contents[open] summary { padding-bottom:13px; }
+  .contents ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 14px; } .contents a { font-size:11px; padding-block:7px; }
+  .contents-help { display:none; } .legal-paper { padding:27px 23px; border-radius:19px; } .legal-body { font-size:14px; line-height:1.85; } .legal-body h2 { font-size:21px; }
+  .document-end { flex-wrap:wrap; gap:5px 18px; } .site-footer { align-items:flex-start; flex-direction:column; gap:17px; }
+}
+@media(max-width:390px) { .shell { width:calc(100% - 32px); } .site-header nav { gap:15px; } h1 { font-size:38px; } .legal-paper { padding:24px 19px; } .contents ol { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print {
+  body { background:white; color:black; } .shell { width:100%; } .site-header,.back-link,.document-tabs,.contents,.document-end,.skip-link,.site-footer { display:none; }
+  .document-layout { display:block; margin:0; } .legal-paper { border:0; border-radius:0; padding:0; } .document-hero { padding-top:0; } h1 { font-size:30px; }
+  .legal-body { font-size:11pt; color:black; } .legal-body h2 { break-after:avoid; } .legal-body p,.legal-body li { orphans:3; widows:3; }
+}
+</style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#document">Skip to document</a>
+  <header class="site-header shell">
+    <a class="brand" href="index.html" aria-label="Ananta home"><span class="brand-symbol" aria-hidden="true">a<span>✦</span></span><span>ananta<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation"><a href="index.html#apps">Our apps</a><a href="index.html#support">Support <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main class="shell" id="document">
+    <a class="back-link" href="index.html#apps"><span aria-hidden="true">←</span> Back to our apps</a>
+    <header class="document-hero">
+      <p class="eyebrow">ANANTA / LEGAL</p>
+      <h1>Privacy Policy</h1>
+      <p class="document-app">Daily Countdown - Event Widget</p>
+      <p class="document-summary">How information is handled when you use this app.</p>
+      <div class="document-meta"><span><strong>Contact</strong> <a href="mailto:colorcalculator@outlook.com">colorcalculator@outlook.com</a></span></div>
+    </header>
+    <nav class="document-tabs" aria-label="Legal documents"><a href="dailycount.html" aria-current="page">Privacy Policy</a><a href="user_terms.html">Terms of Use</a></nav>
+    <div class="document-layout">
+      <details class="contents" open>
+        <summary>ON THIS PAGE</summary>
+        <nav aria-label="On this page"><ol><li><a href="#section-1"><span class="section-number">01</span><span>Overview</span></a></li>
+<li><a href="#section-2"><span class="section-number">02</span><span>Information Collection &amp; Use</span></a></li>
+<li><a href="#section-3"><span class="section-number">03</span><span>Third-Party Services</span></a></li>
+<li><a href="#section-4"><span class="section-number">04</span><span>Cookies</span></a></li>
+<li><a href="#section-5"><span class="section-number">05</span><span>Service Providers</span></a></li>
+<li><a href="#section-6"><span class="section-number">06</span><span>Security</span></a></li>
+<li><a href="#section-7"><span class="section-number">07</span><span>Links to Other Sites</span></a></li>
+<li><a href="#section-8"><span class="section-number">08</span><span>Children’s Privacy</span></a></li>
+<li><a href="#section-9"><span class="section-number">09</span><span>Changes</span></a></li>
+<li><a href="#section-10"><span class="section-number">10</span><span>Contact</span></a></li></ol></nav>
+        <div class="contents-help">Questions about this document?<a href="mailto:colorcalculator@outlook.com">colorcalculator@outlook.com ↗</a></div>
+      </details>
+      <article class="legal-paper" aria-label="Privacy Policy">
+        <div class="legal-body">
+										<h2 id="section-1">Overview</h2>
+										<p>Wuhan Ananta Technology Co., Ltd. ("we", "us", or "our") provides the Daily Countdown - Event Widget app free of charge. This page explains how personal information is handled when you use the Service.</p>
+										<h2 id="section-2">Information Collection & Use</h2>
 										<p>The app may request certain personally identifiable information to improve your experience. That information is retained on your device and is not collected by the developer directly.</p>
-										<h3>Third-Party Services</h3>
+										<h2 id="section-3">Third-Party Services</h2>
 										<p>The app may use third-party libraries or services that collect data (including Log Data) to help diagnose issues and improve functionality. Such services have their own privacy policies and practices.</p>
-										<h3>Cookies</h3>
+										<h2 id="section-4">Cookies</h2>
 										<p>The Service does not explicitly use cookies, but included third-party code may. You can accept or refuse cookies via your device settings; refusing cookies may limit some functionality.</p>
-										<h3>Service Providers</h3>
+										<h2 id="section-5">Service Providers</h2>
 										<p>Third-party companies may be engaged to facilitate or analyze the Service. They are authorized to access personal information only to perform these tasks and are obligated not to disclose it for other purposes.</p>
-										<h3>Security</h3>
+										<h2 id="section-6">Security</h2>
 										<p>Reasonable measures are used to protect personal information, but no method of transmission or storage can be guaranteed 100% secure.</p>
-										<h3>Links to Other Sites</h3>
+										<h2 id="section-7">Links to Other Sites</h2>
 										<p>External links may direct you to sites not operated by the developer. Review each site's privacy policy, as the developer is not responsible for external content or practices.</p>
-										<h3>Children’s Privacy</h3>
+										<h2 id="section-8">Children’s Privacy</h2>
 										<p>The Service is not intended for users under 13. If you believe a child under 13 has provided personal information, please contact the developer to request deletion.</p>
-										<h3>Changes</h3>
+										<h2 id="section-9">Changes</h2>
 										<p>This policy may be updated periodically. Continued use of the Service after changes indicates acceptance of the updated policy.</p>
-										<h3>Contact</h3>
-										<p>Questions or suggestions? Email: colorcalculator@outlook.com</p>
-									</section>
-									</article>
-									
-						</div>
-					</div>
-				</body>
-			</html>
+										<h2 id="section-10">Contact</h2>
+										<p>Questions or suggestions? Email: <a href="mailto:colorcalculator@outlook.com">colorcalculator@outlook.com</a></p>
+									</div>
+        <nav class="document-end" aria-label="Document navigation"><a href="#top">↑ Back to top</a><a href="user_terms.html">Read Terms of Use →</a></nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer shell"><p>© 2026 Wuhan Ananta Technology Co., Ltd.<br>Apps for a brighter everyday.</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="index.html#support">Support</a><a href="user_terms.html">Terms of Use</a></nav></footer>
+  <script>
+    // Keep the chapter list available without pushing the policy below the fold on phones.
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      document.querySelector('.contents').open = false;
+    }
+  </script>
+</body>
+</html>

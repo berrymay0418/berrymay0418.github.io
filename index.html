@@ -1,385 +1,1551 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Apps by Wuhan Ananta Technology Co., Ltd.</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<!-- 添加自定义样式 -->
-	<style>
-		/* Fix top header spacing and remove gray line */
-		#main>.post.featured {
-			padding: 1.5em 0 1em 0 !important;
-			/* Reduced padding */
-			margin-bottom: 0 !important;
-			/* Remove bottom margin */
-			border-bottom: none !important;
-			/* Remove border */
-		}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Discover colorful calculators, countdown widgets, currency tools, and media converters by Wuhan Ananta Technology Co., Ltd. Apps for a brighter everyday.">
+  <title>Ananta — Apps for a brighter everyday</title>
+  <style>
+/* Homepage styles are embedded so this page also works when opened as a local file. */
+:root {
+  --paper:#f8f7f4;
+  --ink:#242522;
+  --muted:#70716a;
+  --purple:#7055c5;
+  --line:#dedfd7;
+  --radius:24px
+}
 
-		#main>.post.featured header.major {
-			padding-bottom: 0 !important;
-			margin-bottom: 0 !important;
-		}
+* {
+  box-sizing:border-box
+}
 
-		#main>.post.featured header.major h1 {
-			margin-bottom: 0.3em !important;
-		}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:32px
+}
 
-		#main>.post.featured header.major p {
-			margin-bottom: 0 !important;
-		}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased
+}
 
-		/* Apply proper top spacing to posts grid */
-		#main>.posts {
-			display: grid !important;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-			gap: 2em !important;
-			width: 100% !important;
-			max-width: 1200px !important;
-			margin: 2em auto 2em !important;
-			/* Added bottom margin */
-			padding: 1em 1.5em 1.5em !important;
-			/* Added top and bottom padding */
-			position: relative !important;
-			/* For absolute positioning context */
-		}
+a {
+  color:inherit;
+  text-decoration:none
+}
 
-		/* Create extra space for shadows */
-		#main>.posts::before,
-		#main>.posts::after {
-			content: '';
-			display: block;
-			height: 12px;
-			/* Height for shadows */
-			width: 100%;
-			position: absolute;
-			left: 0;
-			pointer-events: none;
-		}
+button,a {
+  -webkit-tap-highlight-color:transparent
+}
 
-		#main>.posts::before {
-			top: -8px;
-			/* Space for top shadows */
-		}
+a:focus-visible {
+  outline:3px solid var(--purple);
+  outline-offset:5px;
+  border-radius:5px
+}
 
-		#main>.posts::after {
-			bottom: -8px;
-			/* Space for bottom shadows */
-		}
+svg {
+  display:block
+}
 
-		#main>.posts>article {
-			width: 100% !important;
-			margin: 0 !important;
-			padding: 0 !important;
-		}
+.shell {
+  width:min(1160px,calc(100% - 96px));
+  margin-inline:auto
+}
 
-		.app-card {
-			border-radius: 12px;
-			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-			transition: transform 0.2s ease, box-shadow 0.2s ease;
-			overflow: hidden;
-			margin-bottom: 0;
-			/* 移除底部边距，由网格间距控制 */
-			display: flex;
-			flex-direction: column;
-			background-color: #fff;
-			padding: 1.5em;
-			/* Increased padding */
-			width: 100%;
-			height: 100%;
-			/* 确保卡片高度一致 */
-		}
+.skip-link {
+  position:fixed;
+  top:-80px;
+  left:12px;
+  padding:12px 20px;
+  background:var(--ink);
+  color:white;
+  z-index:10
+}
 
-		.app-card:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-		}
+.skip-link:focus {
+  top:12px
+}
 
-		.app-image-container {
-			margin-bottom: 1.2em;
-			/* Increased bottom margin */
-			align-self: center;
-		}
+.site-header {
+  height:104px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line)
+}
 
-		.app-image {
-			width: 100%;
-			/* 宽度设为100% */
-			height: auto;
-			/* 高度自适应 */
-			max-height: 180px;
-			/* 限制最大高度 */
-			object-fit: cover;
-			border-radius: 10px;
-			/* Slightly reduced to avoid edge issues */
-			margin: 0;
-		}
+.brand {
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  font-size:30px;
+  font-weight:750;
+  letter-spacing:-1.8px
+}
 
-		.app-content {
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			min-width: 0;
-			padding: 0 0.5em;
-			/* Added horizontal padding */
-		}
+.brand-dot {
+  color:var(--purple)
+}
 
-		.app-header {
-			margin-bottom: 1em;
-			/* Increased space */
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-		}
+.brand-symbol {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  background:var(--purple);
+  color:#fff;
+  border-radius:12px;
+  font-size:31px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:-2px
+}
 
-		.app-title {
-			font-size: 1.3em;
-			margin: 0 0 0.3em 0;
-			/* Slightly increased margin */
-			color: #333;
-			font-weight: 600;
-		}
+.brand-symbol span {
+  position:absolute;
+  font-size:13px;
+  top:4px;
+  right:5px;
+  color:#d9f39a
+}
 
-		.app-description {
-			color: #666;
-			line-height: 1.5;
-			margin-bottom: 1em;
-			/* Increased margin */
-			overflow: visible;
-			display: block;
-		}
+.site-header nav {
+  display:flex;
+  gap:36px;
+  font-size:14px;
+  font-weight:550
+}
 
-		.app-features {
-			margin: 0.8em 0;
-			/* Increased margin */
-		}
+.site-header nav a {
+  padding:12px 0
+}
 
-		.app-feature {
-			margin-bottom: 0.6em;
-			/* Increased margin */
-			position: relative;
-			padding-left: 1.2em;
-			font-size: 0.9em;
-			color: #666;
-		}
+.site-header nav a:hover,.footer-details a:hover {
+  color:var(--purple)
+}
 
-		.app-feature:before {
-			content: "•";
-			position: absolute;
-			left: 0;
-			color: #4e4852;
-		}
+.site-header nav span {
+  margin-left:5px
+}
 
-		.button-container {
-			margin-left: auto;
-			margin-top: auto;
-			/* Changed from fixed value to auto to push to bottom */
-			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
-			padding-left: 1em;
-			flex: 0 0 auto;
-			padding-bottom: 0.3em;
-			/* Added padding at bottom */
-		}
+.hero {
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  align-items:center;
+  gap:30px;
+  padding-block:76px 90px
+}
 
-		.button-container .button {
-			font-size: 0.75em;
-			padding: 0.8em 0.8em;
-			/* 调整内边距 */
-			margin-bottom: 0.5em;
-			/* Increased margin bottom */
-			background-color: #f5f5f5;
-			color: #666;
-			border: none;
-			border-radius: 6px;
-			white-space: nowrap;
-			display: inline-flex;
-			/* 改为inline-flex */
-			align-items: center;
-			/* 垂直居中 */
-			justify-content: center;
-			/* 水平居中 */
-			min-width: auto;
-			text-align: center;
-			line-height: 1;
-			/* 设置为1 */
-			height: auto;
-			/* 自动高度 */
-		}
+.eyebrow {
+  font-size:10px;
+  font-weight:650;
+  letter-spacing:1.7px;
+  line-height:1.6;
+  margin:0 0 23px
+}
 
-		.button-container .button:last-child {
-			margin-bottom: 0.3em;
-			/* Increased margin to last button */
-		}
+.hero .eyebrow {
+  display:flex;
+  align-items:center;
+  gap:9px
+}
 
-		.button-container .button:hover {
-			background-color: #e0e0e0;
-		}
+.status-dot {
+  width:7px;
+  height:7px;
+  background:var(--purple);
+  border-radius:50%
+}
 
-		/* 移除或修改冲突的媒体查询 */
-		@media screen and (max-width: 736px) {
-			#main>.posts {
-				grid-template-columns: 1fr !important;
-				padding: 1em 1em 1.5em !important;
-				/* Consistent padding on mobile */
-				margin-top: 1.5em !important;
-				margin-bottom: 1.5em !important;
-				/* Added bottom margin for mobile */
-			}
+h1,h2,h3,p {
+  margin-top:0
+}
 
-			.app-card {
-				padding: 1.2em;
-				/* Increased padding for mobile */
-			}
+h1 {
+  font-size:clamp(54px,5.7vw,78px);
+  line-height:1.06;
+  letter-spacing:-4px;
+  font-weight:650;
+  margin-bottom:28px
+}
 
-			.button-container {
-				margin-left: 0;
-				margin-top: 1.2em;
-				/* Keep fixed top margin for mobile */
-				flex-direction: row;
-				width: 100%;
-				justify-content: flex-end;
-				padding-bottom: 0.4em;
-				/* Added padding for mobile */
-			}
+.joy {
+  color:var(--purple);
+  position:relative;
+  display:inline-block
+}
 
-			.button-container .button {
-				margin-bottom: 0;
-				margin-left: 0.8em;
-				/* Increased margin between buttons */
-				margin-right: 0.4em;
-				/* Increased right margin */
-			}
-		}
-	</style>
+.joy svg {
+  position:absolute;
+  bottom:-13px;
+  left:-6px;
+  width:110%;
+  height:20px;
+  color:#b9d878
+}
 
+.hero-description {
+  font-size:16px;
+  line-height:1.85;
+  color:var(--muted);
+  margin:0 0 29px
+}
+
+.button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  min-height:52px;
+  padding:16px 21px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:550;
+  transition:background .2s,transform .2s
+}
+
+.button-dark {
+  background:var(--ink);
+  color:white
+}
+
+.button-dark:hover {
+  background:#4a3b70;
+  transform:translateY(-2px)
+}
+
+.button>span:first-child {
+  font-size:18px
+}
+
+.platform-note {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:11px;
+  color:var(--muted);
+  margin:18px 0 0
+}
+
+.platform-note svg {
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6
+}
+
+.hero-art {
+  height:455px;
+  position:relative;
+  isolation:isolate
+}
+
+.art-orbit {
+  position:absolute;
+  width:405px;
+  height:405px;
+  border-radius:50%;
+  background:#edebe7;
+  left:55px;
+  top:25px
+}
+
+.art-orbit:after {
+  content:"";
+  position:absolute;
+  inset:-22px;
+  border:1px dashed #d9d6cf;
+  border-radius:50%
+}
+
+.art-calculator {
+  position:absolute;
+  top:45px;
+  left:118px;
+  width:254px;
+  padding:22px;
+  background:#e5dcfc;
+  border:5px solid #fff;
+  border-radius:29px;
+  box-shadow:0 18px 42px #4d3d6e1c;
+  transform:rotate(-9deg)
+}
+
+.calculator-top {
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  color:#6e5795;
+  font-weight:600;
+  margin-bottom:27px
+}
+
+.calculator-top span:last-child {
+  font-size:17px
+}
+
+.calculator-expression {
+  text-align:right;
+  font-size:14px;
+  color:#84739d
+}
+
+.calculator-result {
+  font-size:53px;
+  letter-spacing:-2px;
+  display:flex;
+  justify-content:space-between;
+  flex-direction:row-reverse;
+  align-items:center;
+  margin:3px 0 17px
+}
+
+.calculator-result span {
+  font-size:18px;
+  color:#9f8cbf
+}
+
+.calculator-keys {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px
+}
+
+.calculator-keys>span {
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#f7f2ff;
+  font-size:17px;
+  font-weight:500
+}
+
+.calculator-keys .key-soft {
+  background:#d2c3f1;
+  color:#695187;
+  font-size:13px
+}
+
+.calculator-keys .key-yellow {
+  background:#f4e8ab
+}
+
+.calculator-keys .key-purple {
+  background:var(--purple);
+  color:white
+}
+
+.calculator-keys .key-zero {
+  grid-column:span 2
+}
+
+.mini-note {
+  position:absolute;
+  z-index:2;
+  top:24px;
+  left:4px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:15px 18px;
+  border:1px solid #e4e3da;
+  background:#fffef9;
+  border-radius:16px;
+  box-shadow:0 8px 20px #29292109;
+  transform:rotate(-5deg);
+  font-size:10px;
+  color:var(--muted)
+}
+
+.mini-note strong {
+  display:block;
+  font-size:12px;
+  color:var(--ink);
+  margin-top:5px
+}
+
+.note-icon {
+  display:grid;
+  place-items:center;
+  background:#f4d9d2;
+  color:#97544a;
+  border-radius:12px;
+  width:38px;
+  height:38px;
+  font-size:25px
+}
+
+.art-star {
+  position:absolute
+}
+
+.star-one {
+  font-size:65px;
+  color:#b7ce88;
+  right:21px;
+  top:44px;
+  transform:rotate(10deg)
+}
+
+.star-two {
+  font-size:38px;
+  color:#e8ab91;
+  left:36px;
+  bottom:82px
+}
+
+.currency-note {
+  position:absolute;
+  right:-4px;
+  bottom:60px;
+  background:#f8e6cb;
+  border:4px solid #fff;
+  border-radius:21px;
+  padding:17px 21px 11px;
+  transform:rotate(10deg);
+  box-shadow:0 10px 25px #655a3512;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  width:194px
+}
+
+.currency-symbol {
+  display:grid;
+  place-items:center;
+  width:47px;
+  height:47px;
+  border-radius:50%;
+  background:#e3b366;
+  color:#6a491f;
+  font-size:30px
+}
+
+.currency-symbol.euro {
+  background:#e7bdaf;
+  color:#895642
+}
+
+.currency-swap {
+  font-size:20px;
+  color:#877252
+}
+
+.currency-note p {
+  flex-basis:100%;
+  text-align:center;
+  font-size:9px;
+  margin:0;
+  color:#7b664f
+}
+
+.art-caption {
+  position:absolute;
+  bottom:8px;
+  left:105px;
+  font-size:8px;
+  letter-spacing:1.6px;
+  color:#86857c;
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+.art-caption span {
+  width:21px;
+  height:1px;
+  background:#aaa89c
+}
+
+.apps-section {
+  border-top:1px solid var(--line);
+  padding-top:46px
+}
+
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:31px
+}
+
+.section-heading .eyebrow {
+  margin-bottom:12px;
+  color:var(--muted)
+}
+
+h2 {
+  font-size:35px;
+  line-height:1.2;
+  letter-spacing:-1.3px;
+  font-weight:600;
+  margin-bottom:0
+}
+
+.section-heading>p {
+  font-size:13px;
+  line-height:1.7;
+  color:var(--muted);
+  margin-bottom:2px
+}
+
+.app-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:26px
+}
+
+.app-card {
+  border:1px solid #e3e2da;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:#fffefa;
+  display:flex;
+  flex-direction:column
+}
+
+.card-art {
+  height:253px;
+  position:relative;
+  overflow:hidden;
+  padding:25px 29px
+}
+
+.art-label {
+  font-size:9px;
+  letter-spacing:1.7px;
+  font-weight:600;
+  position:relative;
+  z-index:1
+}
+
+.color-art {
+  background:#e5dcf6;
+  color:#554378
+}
+
+.color-equation {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-top:39px
+}
+
+.equation-number {
+  display:grid;
+  place-items:center;
+  width:70px;
+  height:88px;
+  background:#8f78c9;
+  border-radius:17px;
+  color:white;
+  font-size:54px;
+  font-weight:650;
+  box-shadow:0 7px 0 #7561a8;
+  transform:rotate(-9deg)
+}
+
+.yellow-number {
+  background:#f4d174;
+  color:#715617;
+  box-shadow:0 7px 0 #d7b45b;
+  transform:rotate(6deg)
+}
+
+.pink-number {
+  background:#e5a1b2;
+  color:#773d5a;
+  box-shadow:0 7px 0 #c98396;
+  transform:rotate(-5deg)
+}
+
+.equation-plus,.equation-equals {
+  font-size:30px;
+  color:#7d699f
+}
+
+.color-art>p {
+  text-align:center;
+  font-size:11px;
+  margin-top:32px
+}
+
+.card-spark {
+  position:absolute
+}
+
+.spark-left {
+  left:27px;
+  bottom:60px;
+  font-size:24px;
+  color:#9f86c4
+}
+
+.spark-right {
+  right:26px;
+  top:59px;
+  font-size:38px;
+  color:#a48ace
+}
+
+.countdown-art {
+  background:#eddfd7;
+  color:#745349
+}
+
+.countdown-preview {
+  width:290px;
+  margin:19px auto 0;
+  background:#fcf7ee;
+  border:1px solid #fff;
+  border-radius:19px;
+  padding:17px 21px;
+  transform:rotate(-4deg);
+  box-shadow:0 12px 20px #76574610
+}
+
+.countdown-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:8px;
+  letter-spacing:1px;
+  color:#8e796d
+}
+
+.countdown-top span:first-child {
+  color:#c89375;
+  font-size:16px
+}
+
+.countdown-number {
+  font-size:73px;
+  line-height:1.15;
+  letter-spacing:-3px;
+  color:#836351;
+  display:flex;
+  gap:16px;
+  align-items:baseline;
+  margin:7px 0
+}
+
+.countdown-number>span {
+  font-size:17px;
+  letter-spacing:-.5px
+}
+
+.countdown-bottom {
+  display:flex;
+  justify-content:space-between;
+  font-size:9px;
+  color:#a58d7e
+}
+
+.countdown-bottom span:last-child {
+  font-size:15px
+}
+
+.countdown-spark {
+  right:45px;
+  top:60px;
+  font-size:54px;
+  color:#c99479;
+  transform:rotate(12deg)
+}
+
+.scientific-art {
+  background:#dce9db;
+  color:#405e43
+}
+
+.math-formula {
+  font-size:34px;
+  letter-spacing:-1.5px;
+  font-weight:550;
+  width:280px;
+  margin:19px auto 0;
+  transform:rotate(-5deg)
+}
+
+.math-formula>span {
+  display:block;
+  font-size:72px;
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-4px
+}
+
+.formula-star {
+  display:inline-block;
+  font-size:37px;
+  color:#789c63;
+  vertical-align:middle;
+  margin-left:26px
+}
+
+.math-modes {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:22px
+}
+
+.math-modes span {
+  font-size:9px;
+  padding:7px 12px;
+  border:1px solid #b7cdb5;
+  border-radius:20px
+}
+
+.math-modes span:nth-child(2) {
+  background:#49634a;
+  border-color:#49634a;
+  color:#fff
+}
+
+.currency-art {
+  background:#f3e8c7;
+  color:#79662e
+}
+
+.currency-coins {
+  display:flex;
+  justify-content:center;
+  padding-top:30px;
+  gap:0
+}
+
+.coin {
+  border-radius:50%;
+  width:88px;
+  height:88px;
+  display:grid;
+  place-items:center;
+  font-size:50px;
+  font-weight:500;
+  border:5px solid #ffe7a5;
+  box-shadow:0 7px 0 #c4a757;
+  background:#e2c572;
+  color:#765d22;
+  transform:rotate(-13deg);
+  position:relative
+}
+
+.coin-euro {
+  background:#9f8dc7;
+  border-color:#cab9e8;
+  color:#f7f2ff;
+  box-shadow:0 7px 0 #8270ac;
+  transform:rotate(12deg) translateY(-8px)
+}
+
+.coin-pound {
+  background:#9cb99a;
+  border-color:#c5d7b9;
+  color:#375d36;
+  box-shadow:0 7px 0 #809c75;
+  transform:rotate(-8deg)
+}
+
+.coin-yen {
+  background:#e1a08f;
+  border-color:#f4c6b1;
+  color:#854b3b;
+  box-shadow:0 7px 0 #c08070;
+  transform:rotate(12deg) translateY(-8px)
+}
+
+.currency-art>p {
+  text-align:center;
+  font-size:11px;
+  margin-top:30px
+}
+
+.card-body {
+  padding:28px 29px 25px;
+  display:flex;
+  flex-direction:column;
+  flex:1
+}
+
+.app-category {
+  font-size:9px;
+  letter-spacing:1.3px;
+  color:var(--muted);
+  font-weight:650;
+  margin-bottom:10px
+}
+
+h3 {
+  font-size:24px;
+  line-height:1.3;
+  letter-spacing:-.7px;
+  font-weight:600;
+  margin-bottom:12px
+}
+
+.card-body>p {
+  font-size:14px;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:19px;
+  max-width:440px
+}
+
+.feature-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  list-style:none;
+  padding:0;
+  margin:0 0 26px
+}
+
+.feature-tags li {
+  border-radius:6px;
+  background:#f1f0ea;
+  padding:6px 9px;
+  font-size:10px;
+  color:#727266
+}
+
+.card-actions {
+  margin-top:auto;
+  border-top:1px solid #e9e8e0;
+  padding-top:19px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px
+}
+
+.store-link {
+  font-size:12px;
+  font-weight:650;
+  display:inline-flex;
+  gap:18px;
+  align-items:center;
+  min-height:32px
+}
+
+.store-link span {
+  font-size:19px;
+  color:var(--purple);
+  transition:transform .2s
+}
+
+.store-link:hover {
+  color:var(--purple)
+}
+
+.store-link:hover span {
+  transform:translate(2px,-2px)
+}
+
+.policy-link {
+  font-size:11px;
+  color:#77786f;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-color:#c9c9bf;
+  display:inline-flex;
+  align-items:center;
+  min-height:32px
+}
+
+.policy-link:hover {
+  color:var(--purple)
+}
+
+.policy-links {
+  display:flex;
+  gap:14px
+}
+
+.collection-note {
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin:28px 0 0
+}
+
+.collection-note span {
+  color:var(--purple);
+  margin-left:8px
+}
+
+.support-section {
+  padding-block:64px
+}
+
+.support-panel {
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:35px;
+  padding:43px 46px;
+  background:#efeee6;
+  border-radius:var(--radius)
+}
+
+.support-panel .eyebrow {
+  color:var(--muted);
+  margin-bottom:15px
+}
+
+.support-panel h2 {
+  font-size:33px
+}
+
+.support-panel p:not(.eyebrow) {
+  font-size:13px;
+  line-height:1.7;
+  color:var(--muted);
+  margin:15px 0 0;
+  max-width:420px
+}
+
+.support-button {
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:3px 20px;
+  padding:17px 20px;
+  min-width:250px
+}
+
+.support-email {
+  grid-column:span 2;
+  font-size:10px;
+  font-weight:400;
+  color:#c2c4b7;
+  padding-top:4px
+}
+
+.support-flower {
+  position:absolute;
+  right:197px;
+  bottom:-72px;
+  font-size:255px;
+  line-height:1;
+  color:#e0e2d2;
+  transform:rotate(15deg);
+  pointer-events:none
+}
+
+.site-footer {
+  border-top:1px solid var(--line);
+  padding-block:30px 38px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px
+}
+
+.footer-brand {
+  font-size:25px
+}
+
+.site-footer p {
+  font-size:11px;
+  color:#83837b;
+  margin:8px 0 0
+}
+
+.footer-details {
+  text-align:right
+}
+
+.footer-details nav {
+  display:flex;
+  justify-content:flex-end;
+  gap:25px;
+  font-size:11px
+}
+
+.footer-details p {
+  margin-top:14px
+}
+
+@media(min-width:1440px) {
+  .hero {
+    padding-block:88px 100px
+  }
+}
+
+@media(max-width:1050px) {
+  .shell {
+    width:calc(100% - 64px)
+  }
+  .hero {
+    gap:10px
+  }
+  .hero-art {
+    transform:scale(.88);
+    transform-origin:center right
+  }
+  .hero .eyebrow {
+    font-size:8px;
+    letter-spacing:1.2px
+  }
+  h1 {
+    font-size:63px
+  }
+  .hero-description {
+    font-size:14px
+  }
+  .card-body {
+    padding-inline:24px
+  }
+  h3 {
+    font-size:21px
+  }
+  .card-art {
+    padding-inline:24px
+  }
+  .countdown-spark {
+    right:19px
+  }
+  .coin {
+    width:76px;
+    height:76px;
+    font-size:44px
+  }
+  .color-equation {
+    gap:9px
+  }
+  .equation-number {
+    width:58px;
+    height:79px;
+    font-size:46px
+  }
+}
+
+@media(max-width:760px) {
+  .shell {
+    width:calc(100% - 40px)
+  }
+  .site-header {
+    height:82px
+  }
+  .brand {
+    font-size:27px
+  }
+  .brand-symbol {
+    width:34px;
+    height:34px;
+    font-size:28px
+  }
+  .site-header nav {
+    gap:23px;
+    font-size:12px
+  }
+  .hero {
+    grid-template-columns:1fr;
+    padding-block:47px 30px;
+    gap:20px
+  }
+  .hero-copy {
+    max-width:540px
+  }
+  .hero .eyebrow {
+    font-size:9px;
+    letter-spacing:1.3px
+  }
+  h1 {
+    font-size:66px;
+    letter-spacing:-3.5px
+  }
+  .hero-description {
+    font-size:15px
+  }
+  .hero-art {
+    width:440px;
+    max-width:100%;
+    justify-self:center;
+    height:430px;
+    transform:scale(.94);
+    transform-origin:center center
+  }
+  .art-calculator {
+    left:100px
+  }
+  .art-orbit {
+    left:20px;
+    width:365px;
+    height:365px
+  }
+  .mini-note {
+    left:0
+  }
+  .star-one {
+    right:9px
+  }
+  .star-two {
+    left:14px
+  }
+  .currency-note {
+    right:0;
+    bottom:36px
+  }
+  .art-caption {
+    left:65px;
+    bottom:0
+  }
+  .section-heading {
+    align-items:flex-start;
+    gap:20px
+  }
+  .section-heading>p {
+    display:none
+  }
+  h2 {
+    font-size:29px
+  }
+  .apps-section {
+    padding-top:30px
+  }
+  .app-grid {
+    grid-template-columns:1fr;
+    gap:24px
+  }
+  .card-art {
+    height:251px
+  }
+  .card-body {
+    padding:25px
+  }
+  .card-body>p {
+    max-width:none
+  }
+  h3 {
+    font-size:23px
+  }
+  .color-equation {
+    gap:13px
+  }
+  .equation-number {
+    width:70px;
+    height:88px;
+    font-size:54px
+  }
+  .coin {
+    width:84px;
+    height:84px;
+    font-size:48px
+  }
+  .countdown-spark {
+    right:28px
+  }
+  .support-section {
+    padding-block:43px
+  }
+  .support-panel {
+    padding:31px 27px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:25px
+  }
+  .support-panel h2 {
+    font-size:29px
+  }
+  .support-flower {
+    right:-24px;
+    bottom:-90px;
+    font-size:240px
+  }
+  .support-button {
+    min-width:250px
+  }
+  .site-footer {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:23px
+  }
+  .footer-details {
+    text-align:left
+  }
+  .footer-details nav {
+    justify-content:flex-start
+  }
+  .collection-note {
+    font-size:11px
+  }
+}
+
+@media(max-width:390px) {
+  .shell {
+    width:calc(100% - 32px)
+  }
+  .hero .eyebrow {
+    font-size:8px;
+    letter-spacing:1px
+  }
+  h1 {
+    font-size:57px
+  }
+  .desktop-break {
+    display:none
+  }
+  .hero-art {
+    height:365px;
+    transform:scale(.8);
+    width:410px;
+    max-width:none;
+    margin-block:-28px
+  }
+  .hero {
+    overflow:hidden
+  }
+  .art-calculator {
+    left:94px
+  }
+  .art-orbit {
+    left:15px
+  }
+  .card-art {
+    padding-inline:18px;
+    height:231px
+  }
+  .color-equation {
+    gap:8px;
+    margin-top:31px
+  }
+  .equation-number {
+    width:57px;
+    height:75px;
+    font-size:45px
+  }
+  .spark-left {
+    left:15px;
+    bottom:40px
+  }
+  .spark-right {
+    right:15px;
+    font-size:29px
+  }
+  .card-body {
+    padding:23px 20px
+  }
+  h3 {
+    font-size:21px
+  }
+  .countdown-preview {
+    width:255px
+  }
+  .countdown-spark {
+    right:11px;
+    font-size:43px
+  }
+  .coin {
+    width:69px;
+    height:69px;
+    font-size:40px
+  }
+  .currency-coins {
+    padding-top:32px
+  }
+  .currency-art>p {
+    margin-top:31px
+  }
+  .card-actions {
+    gap:8px
+  }
+  .store-link {
+    font-size:11px;
+    gap:8px
+  }
+  .policy-links {
+    gap:9px
+  }
+  .support-panel {
+    padding:27px 23px
+  }
+  .support-button {
+    min-width:0;
+    width:100%
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto
+  }
+  a,.button,.store-link span {
+    transition:none
+  }
+  .button-dark:hover {
+    transform:none
+  }
+}
+
+/* Keep the decorative hero fully inside narrow phone screens. */
+@media (max-width: 760px) {
+  .hero-art {
+    width: 100%;
+    max-width: 440px;
+    height: 400px;
+    transform: none;
+    margin-block: 0;
+  }
+  .art-orbit {
+    width: 300px;
+    height: 300px;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .art-calculator {
+    top: 35px;
+    left: 50%;
+    margin-left: -127px;
+    transform: rotate(-9deg) scale(.85);
+    transform-origin: top center;
+  }
+  .mini-note {
+    top: 12px;
+    left: 0;
+    transform: rotate(-5deg) scale(.85);
+    transform-origin: left center;
+  }
+  .currency-note {
+    right: 0;
+    bottom: 45px;
+    transform: rotate(10deg) scale(.85);
+    transform-origin: right center;
+  }
+  .star-one {
+    right: 0;
+    top: 30px;
+    font-size: 45px;
+  }
+  .star-two {
+    left: 0;
+    bottom: 80px;
+    font-size: 30px;
+  }
+  .art-caption {
+    bottom: 9px;
+    left: 30px;
+    font-size: 7px;
+  }
+  .store-link, .policy-link {
+    min-height: 44px;
+  }
+}
+
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  }
+  .hero-art {
+    transform: scale(.72);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: clamp(44px, 14.8vw, 57px);
+    letter-spacing: -2.5px;
+  }
+  .site-header nav {
+    gap: 16px;
+  }
+}
+
+/* Echoia joins the collection as a wide card, with its own media illustration. */
+.media-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.media-art {
+  background: #dce8ed;
+  color: #476572;
+  height: 100%;
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.media-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+.media-video {
+  width: 125px;
+  height: 104px;
+  padding: 13px;
+  border-radius: 19px;
+  background: #f6fafb;
+  box-shadow: 0 7px 0 #b2c7d0;
+  transform: rotate(-7deg);
+}
+.media-video-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.media-video-bar span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #a1bbc8;
+}
+.media-play {
+  display: grid;
+  place-items: center;
+  height: 61px;
+  background: #cbdce3;
+  border-radius: 10px;
+}
+.media-play svg {
+  width: 25px;
+  height: 25px;
+  fill: #577d8f;
+}
+.media-arrow {
+  font-size: 29px;
+  color: #799aa9;
+}
+.media-audio {
+  width: 125px;
+  height: 104px;
+  padding: 15px 12px;
+  border-radius: 19px;
+  background: #8caebc;
+  box-shadow: 0 7px 0 #7193a2;
+  transform: rotate(7deg);
+}
+.media-wave {
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.media-wave span {
+  width: 5px;
+  height: 22px;
+  border-radius: 5px;
+  background: #f1f6f3;
+}
+.media-wave span:nth-child(2n) { height: 36px; }
+.media-wave span:nth-child(3n) { height: 48px; }
+.media-audio p {
+  text-align: center;
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin: 6px 0 0;
+  color: #f1f6f3;
+}
+.media-art > p {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 11px;
+}
+@media (max-width: 760px) {
+  .media-card { grid-template-columns: minmax(0, 1fr); }
+  .media-art { min-height: 253px; }
+}
+@media (max-width: 390px) {
+  .media-art { min-height: 231px; }
+  .media-illustration { gap: 10px; }
+  .media-video, .media-audio { width: 102px; height: 98px; }
+  .media-play { height: 55px; }
+  .media-wave { height: 47px; }
+}
+  </style>
 </head>
-
-<body class="is-preload">
-
-	<!-- Wrapper -->
-	<div id="wrapper" class="fade-in">
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Featured Post -->
-			<article class="post featured">
-				<header class="major">
-					<h1>Welcome</h1>
-					<p>Glad to hear your suggestions about all Apps by Wuhan Ananta Technology Co., Ltd.</p>
-				</header>
-			</article>
-
-			<!-- Posts -->
-			<section class="posts">
-				<article class="app-card">
-					<div class="app-image-container">
-						<img src="images/colorcalculator.png" alt="Color Calculator" class="app-image" />
-					</div>
-					<div class="app-content">
-						<div class="app-header">
-							<h2 class="app-title">Color Calculator</h2>
-							<!-- <span class="app-date">December 24, 2019</span> -->
-						</div>
-						<div class="app-description">
-							<p>Looking for a vivid calculator app to replace your old, boring one? Then Color Calculator
-								is the right choice! Find your favorite "fancy calculator" which is also a pretty widget
-								app for free and a scientific calculator!</p>
-						</div>
-					</div>
-					<div class="button-container">
-						<a href="colorcalculator.html" class="button">Privacy</a>
-					</div>
-				</article>
-
-				<article class="app-card">
-					<div class="app-image-container">
-						<img src="images/dailycount.png" alt="Daily Count" class="app-image" />
-					</div>
-					<div class="app-content">
-						<div class="app-header">
-							<h2 class="app-title">Daily Count</h2>
-							<!-- <span class="app-date">March 05, 2020</span> -->
-						</div>
-						<div class="app-description">
-							<p>Track every event you care.</p>
-							<div class="app-features">
-								<p class="app-feature">Count years, months, weeks, days, hours, minutes and even
-									seconds.</p>
-								<p class="app-feature">Schedule notifications to alert you at accurate time.</p>
-								<p class="app-feature">Customize with your own wallpaper or photo.</p>
-							</div>
-						</div>
-					</div>
-					<div class="button-container">
-						<a href="dailycount.html" class="button">Privacy</a>
-					</div>
-				</article>
-
-				<article class="app-card">
-					<div class="app-image-container">
-						<img src="images/unicorncurrency.png" alt="Unicorn Currency" class="app-image" />
-					</div>
-					<div class="app-content">
-						<div class="app-header">
-							<h2 class="app-title">Unicorn Currency</h2>
-							<!-- <span class="app-date">September 24, 2019</span> -->
-						</div>
-						<div class="app-description">
-							<p>Looking for a unique dreamy currency calculator with modern fashion? Yes, 🦄 'Unicorn
-								Currency'✨ is right for you.</p>
-							<div class="app-features">
-								<p class="app-feature">Fabulous kawaii/cool/beautiful themes for all!</p>
-								<p class="app-feature">Adorable unicorns on screen!</p>
-								<p class="app-feature">Rainbow colors for free!</p>
-							</div>
-						</div>
-					</div>
-					<div class="button-container">
-						<a href="unicorncurrency.html" class="button">Privacy</a>
-					</div>
-				</article>
-
-				<article class="app-card">
-					<div class="app-image-container">
-						<img src="images/supercalculator.png" alt="Super Calculator" class="app-image" />
-					</div>
-					<div class="app-content">
-						<div class="app-header">
-							<h2 class="app-title">Super Calculator</h2>
-							<!-- <span class="app-date">July 03, 2020</span> -->
-						</div>
-						<div class="app-description">
-							<p>Super Calculator - The Basic & Scientific Calculator with powerful math calculation and
-								complex mathematical equation display. Also, The real-time currency Calculator with more
-								than 150 currencies.</p>
-							<div class="app-features">
-								<p class="app-feature">TOTALLY FREE: No Ads and Unlimited use</p>
-								<p class="app-feature">Basic to advanced scientific calculation</p>
-								<p class="app-feature">Support display Complex Expression with result</p>
-							</div>
-						</div>
-					</div>
-					<div class="button-container">
-						<a href="supercalculator.html" class="button">Privacy</a>
-						<a href="supercalculator_terms.html" class="button">Terms</a>
-					</div>
-				</article>
-			</section>
-		</div>
-	</div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    <a class="brand" href="index.html" aria-label="Ananta home"><span class="brand-symbol" aria-hidden="true">a<span>✦</span></span><span>ananta<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation"><a href="#apps">Our apps</a><a href="#support">Support <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SMALL TOOLS. EVERYDAY POSSIBILITIES.</p>
+        <h1 id="hero-title">A little useful.<br>A lot of <span class="joy">joy.<svg viewBox="0 0 190 20" fill="none" aria-hidden="true"><path d="M3 13C46 2 119 2 181 9M22 17C85 9 136 8 187 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+        <p class="hero-description">For the numbers you need, the moments you love,<br class="desktop-break"> and everything in between. Thoughtful apps<br class="desktop-break"> that bring a little color to your day.</p>
+        <a class="button button-dark" href="#apps">Find your everyday favorite <span aria-hidden="true">↓</span></a>
+        <p class="platform-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M10 18h4"/></svg> Made for iPhone &amp; iPad</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit"></div><span class="art-star star-one">✳</span><span class="art-star star-two">✦</span>
+        <div class="mini-note"><span class="note-icon">♡</span><div>A date to look forward to.<strong>Make every day count.</strong></div></div>
+        <div class="art-calculator">
+          <div class="calculator-top"><span>Everyday math</span><span>✦</span></div>
+          <div class="calculator-expression">128 + 256</div><div class="calculator-result">384<span>↗</span></div>
+          <div class="calculator-keys"><span class="key-soft">AC</span><span class="key-soft">±</span><span class="key-soft">%</span><span class="key-yellow">÷</span><span>7</span><span>8</span><span>9</span><span class="key-yellow">×</span><span>4</span><span>5</span><span>6</span><span class="key-yellow">−</span><span>1</span><span>2</span><span>3</span><span class="key-yellow">+</span><span class="key-zero">0</span><span>.</span><span class="key-purple">=</span></div>
+        </div>
+        <div class="currency-note"><span class="currency-symbol">$</span><span class="currency-swap">⇄</span><span class="currency-symbol euro">€</span><p>A world of possibilities.</p></div>
+        <div class="art-caption"><span></span> A LITTLE COLOR GOES A LONG WAY</div>
+      </div>
+    </section>
+    <section class="apps-section shell" id="apps" aria-labelledby="apps-title">
+      <div class="section-heading"><div><p class="eyebrow">THE APP COLLECTION</p><h2 id="apps-title">Small apps. Big on everyday.</h2></div><p>Find a little something<br>that works for you.</p></div>
+      <div class="app-grid">
+        <article class="app-card color-card" aria-labelledby="color-title">
+          <div class="card-art color-art" aria-hidden="true"><span class="art-label">MATH, WITH PERSONALITY</span><div class="color-equation"><span class="equation-number">2</span><span class="equation-plus">+</span><span class="equation-number yellow-number">2</span><span class="equation-equals">=</span><span class="equation-number pink-number">4</span></div><span class="card-spark spark-left">✦</span><span class="card-spark spark-right">✳</span><p>Find your kind of colorful.</p></div>
+          <div class="card-body"><div class="app-category">CALCULATE · CUSTOMIZE</div><h3 id="color-title">Color Calculator-smart&amp;cute</h3><p>Everyday math, with a personality all your own. Explore colorful themes, scientific tools, and calculation history.</p><ul class="feature-tags" aria-label="Features"><li>Colorful themes</li><li>Scientific mode</li><li>History</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/color-calculator-smart-cute/id1492634383" aria-label="View Color Calculator-smart and cute on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="colorcalculator.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+        </article>
+        <article class="app-card countdown-card" aria-labelledby="countdown-title">
+          <div class="card-art countdown-art" aria-hidden="true"><span class="art-label">THE MOMENTS THAT MATTER</span><div class="countdown-preview"><div class="countdown-top"><span>✦</span><span>THE NEXT ADVENTURE</span><span>↗</span></div><div class="countdown-number">12<span>days to go</span></div><div class="countdown-bottom"><span>A little closer, every day.</span><span>♡</span></div></div><span class="card-spark countdown-spark">✳</span></div>
+          <div class="card-body"><div class="app-category">COUNT DOWN · LOOK FORWARD</div><h3 id="countdown-title">Daily Countdown - Event Widget</h3><p>Keep your favorite moments close. Count down to a trip, celebrate an anniversary, and make your Home Screen yours.</p><ul class="feature-tags" aria-label="Features"><li>Widgets</li><li>Reminders</li><li>Custom backgrounds</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/daily-countdown-event-widget/id1501368970" aria-label="View Daily Countdown - Event Widget on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="dailycount.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+        </article>
+        <article class="app-card calculator-card" aria-labelledby="calculator-title">
+          <div class="card-art scientific-art" aria-hidden="true"><span class="art-label">A LITTLE MORE CAPABLE</span><div class="math-formula">(24 × 3) + 8<span>= 80<span class="formula-star">✦</span></span></div><div class="math-modes"><span>Basic</span><span>Scientific</span><span>Currency</span></div></div>
+          <div class="card-body"><div class="app-category">SOLVE · CONVERT</div><h3 id="calculator-title">Calculator: Basic &amp; Scientific</h3><p>From quick sums to bigger questions. Basic and scientific calculations, currency conversion, and unit tools in one place.</p><ul class="feature-tags" aria-label="Features"><li>Scientific tools</li><li>Unit conversion</li><li>History</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/calculator-basic-scientific/id1521827072" aria-label="View Calculator: Basic and Scientific on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="supercalculator.html">Privacy</a><a class="policy-link" href="supercalculator_terms.html">Terms</a></div></div></div>
+        </article>
+        <article class="app-card currency-card" aria-labelledby="currency-title">
+          <div class="card-art currency-art" aria-hidden="true"><span class="art-label">GO PLACES. ADD SOME COLOR.</span><div class="currency-coins"><span class="coin coin-dollar">$</span><span class="coin coin-euro">€</span><span class="coin coin-pound">£</span><span class="coin coin-yen">¥</span></div><p>Different currencies. Same simple idea.</p></div>
+          <div class="card-body"><div class="app-category">CONVERT · EXPLORE</div><h3 id="currency-title">Color Currency Calculator</h3><p>A colorful companion for your next destination. Calculate and convert currencies with playful themes and updated rates.</p><ul class="feature-tags" aria-label="Features"><li>150+ currencies</li><li>Colorful themes</li><li>Currency math</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/color-currency-calculator/id1480249933" aria-label="View Color Currency Calculator on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="unicorncurrency.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+        </article>
+        <article class="app-card media-card" id="media" aria-labelledby="media-title">
+          <div class="card-art media-art" aria-hidden="true">
+            <span class="art-label">KEEP THE PART YOU LOVE</span>
+            <div class="media-illustration">
+              <div class="media-video"><div class="media-video-bar"><span></span><span></span><span></span></div><div class="media-play"><svg viewBox="0 0 24 24"><path d="M7 3 21 12 7 21Z"/></svg></div></div>
+              <span class="media-arrow">→</span>
+              <div class="media-audio"><div class="media-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><p>AUDIO</p></div>
+            </div>
+            <p>From a moving moment to a sound worth keeping.</p>
+          </div>
+          <div class="card-body">
+            <div class="app-category">EXTRACT · CONVERT · CREATE</div>
+            <h3 id="media-title">Media Converter-Video to Audio</h3>
+            <p>Keep the sound. Reimagine the moment. Extract audio, convert media, and turn video clips into GIFs or Live Photos, right on your device.</p>
+            <ul class="feature-tags" aria-label="Features"><li>Video to audio</li><li>GIFs &amp; Live Photos</li><li>On-device processing</li></ul>
+            <div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/media-converter-video-to-audio/id6743954942" aria-label="View Media Converter-Video to Audio on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="echoia.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div>
+          </div>
+        </article>
+      </div>
+      <p class="collection-note">A few little ways to make the everyday your own. <span aria-hidden="true">✦</span></p>
+    </section>
+    <section class="support-section shell" id="support" aria-labelledby="support-title"><div class="support-panel"><div><p class="eyebrow">WE’RE HERE TO HELP</p><h2 id="support-title">A question? An idea?<br>We’d love to hear it.</h2><p>Get in touch for app support or share what you’d like to see next.</p></div><a class="button button-dark support-button" href="mailto:colorcalculator@outlook.com">Say hello <span aria-hidden="true">↗</span><span class="support-email">colorcalculator@outlook.com</span></a><span class="support-flower" aria-hidden="true">✳</span></div></section>
+  </main>
+  <footer class="site-footer shell"><div><a class="brand footer-brand" href="index.html">ananta<span class="brand-dot">.</span></a><p>Apps for a brighter everyday.</p></div><div class="footer-details"><nav aria-label="Footer navigation"><a href="#support">Contact</a><a href="user_terms.html">Terms of Use</a><a href="https://apps.apple.com/us/developer/wuhan-ananta-technology-co-ltd/id1508854889">App Store <span aria-hidden="true">↗</span></a></nav><p>© 2026 Wuhan Ananta Technology Co., Ltd.</p></div></footer>
 </body>
-
 </html>
