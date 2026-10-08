@@ -828,30 +828,35 @@ h3 {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px
+  gap:20px;
+  flex-wrap:wrap
 }
 
-.store-link {
-  font-size:12px;
-  font-weight:650;
-  display:inline-flex;
-  gap:18px;
+/* Official artwork remains unmodified, with 10px clear space around 40px badges. */
+.store-badges {
+  display:flex;
+  flex-wrap:wrap;
   align-items:center;
-  min-height:32px
+  gap:20px;
+  padding:10px 0;
+  max-width:100%
 }
 
-.store-link span {
-  font-size:19px;
-  color:var(--purple);
-  transition:transform .2s
+.store-badge {
+  display:block;
+  flex:none;
+  border-radius:6px
 }
 
-.store-link:hover {
-  color:var(--purple)
+.store-badge img {
+  display:block;
+  height:40px;
+  width:auto
 }
 
-.store-link:hover span {
-  transform:translate(2px,-2px)
+.store-badge:focus-visible {
+  outline:2px solid var(--purple);
+  outline-offset:5px
 }
 
 .policy-link {
@@ -870,8 +875,16 @@ h3 {
 }
 
 .policy-links {
+  margin-left:auto;
   display:flex;
   gap:14px
+}
+
+.badge-credits {
+  font-size:10px;
+  line-height:1.6;
+  color:var(--muted);
+  padding-bottom:24px
 }
 
 .collection-note {
@@ -1183,7 +1196,14 @@ h3 {
   .footer-details nav {
     justify-content:flex-start
   }
-  .collection-note {
+  .badge-credits {
+  font-size:10px;
+  line-height:1.6;
+  color:var(--muted);
+  padding-bottom:24px
+}
+
+.collection-note {
     font-size:11px
   }
 }
@@ -1266,10 +1286,6 @@ h3 {
   .card-actions {
     gap:8px
   }
-  .store-link {
-    font-size:11px;
-    gap:8px
-  }
   .policy-links {
     gap:9px
   }
@@ -1286,7 +1302,7 @@ h3 {
   html {
     scroll-behavior:auto
   }
-  a,.button,.store-link span {
+  a,.button {
     transition:none
   }
   .button-dark:hover {
@@ -1344,7 +1360,7 @@ h3 {
     left: 30px;
     font-size: 7px;
   }
-  .store-link, .policy-link {
+  .store-badge, .policy-link {
     min-height: 44px;
   }
 }
@@ -1372,15 +1388,14 @@ h3 {
 
 /* Echoia joins the collection as a wide card, with its own media illustration. */
 .media-card {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 .media-art {
   background: #dce8ed;
   color: #476572;
   height: 100%;
-  min-height: 295px;
+  min-height: 253px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1475,6 +1490,21 @@ h3 {
   .media-play { height: 55px; }
   .media-wave { height: 47px; }
 }
+
+.reader-art { background:#e6e6d9; color:#586343; }
+.reader-illustration { display:flex; align-items:center; justify-content:center; gap:24px; margin:27px 0 23px; }
+.reader-book { width:123px; height:119px; padding:22px 17px; background:#fcfaf0; border-radius:7px 17px 17px 7px; border-left:9px solid #a4b08b; box-shadow:5px 6px 0 #c1c5ac; transform:rotate(-8deg); }
+.reader-book span { display:block; height:4px; width:73px; background:#c5c7b2; border-radius:3px; margin-bottom:12px; }
+.reader-book span:nth-child(2) { width:53px; }
+.reader-book span:nth-child(4) { width:61px; }
+.reader-listen { display:flex; align-items:center; justify-content:center; gap:6px; width:111px; height:111px; background:#a3ae8c; border:5px solid #c9ceb5; border-radius:50%; transform:rotate(9deg); box-shadow:0 6px 0 #87916d; }
+.reader-listen span { width:6px; height:23px; border-radius:5px; background:#faf9ee; }
+.reader-listen span:nth-child(2n) { height:45px; }
+.reader-listen span:nth-child(3) { height:61px; }
+.reader-art > p { text-align:center; font-size:11px; margin:0; }
+.coming-soon { display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:550; color:#707760; min-height:44px; }
+.coming-soon::before { content:''; width:6px; height:6px; border-radius:50%; background:#97a574; }
+@media(max-width:390px) { .reader-illustration { gap:16px; margin-top:22px; } .reader-book { width:113px; height:109px; padding-top:18px; } .reader-listen { width:98px; height:98px; } }
   </style>
 </head>
 <body>
@@ -1509,19 +1539,19 @@ h3 {
       <div class="app-grid">
         <article class="app-card color-card" aria-labelledby="color-title">
           <div class="card-art color-art" aria-hidden="true"><span class="art-label">MATH, WITH PERSONALITY</span><div class="color-equation"><span class="equation-number">2</span><span class="equation-plus">+</span><span class="equation-number yellow-number">2</span><span class="equation-equals">=</span><span class="equation-number pink-number">4</span></div><span class="card-spark spark-left">✦</span><span class="card-spark spark-right">✳</span><p>Find your kind of colorful.</p></div>
-          <div class="card-body"><div class="app-category">CALCULATE · CUSTOMIZE</div><h3 id="color-title">Color Calculator-smart&amp;cute</h3><p>Everyday math, with a personality all your own. Explore colorful themes, scientific tools, and calculation history.</p><ul class="feature-tags" aria-label="Features"><li>Colorful themes</li><li>Scientific mode</li><li>History</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/color-calculator-smart-cute/id1492634383" aria-label="View Color Calculator-smart and cute on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="colorcalculator.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+          <div class="card-body"><div class="app-category">CALCULATE · CUSTOMIZE</div><h3 id="color-title">Color Calculator-smart&amp;cute</h3><p>Everyday math, with a personality all your own. Explore colorful themes, scientific tools, and calculation history.</p><ul class="feature-tags" aria-label="Features"><li>Colorful themes</li><li>Scientific mode</li><li>History</li></ul><div class="card-actions"><div class="store-badges" aria-label="Download options"><a class="store-badge" href="https://apps.apple.com/us/app/color-calculator-smart-cute/id1492634383" aria-label="View Color Calculator-smart and cute on the App Store"><img src="assets/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.lancekinji.colorcalculator" aria-label="View this app on Google Play"><img src="assets/badges/google-play.svg" alt="Get it on Google Play" width="135" height="40"></a></div><div class="policy-links"><a class="policy-link" href="colorcalculator.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
         </article>
         <article class="app-card countdown-card" aria-labelledby="countdown-title">
           <div class="card-art countdown-art" aria-hidden="true"><span class="art-label">THE MOMENTS THAT MATTER</span><div class="countdown-preview"><div class="countdown-top"><span>✦</span><span>THE NEXT ADVENTURE</span><span>↗</span></div><div class="countdown-number">12<span>days to go</span></div><div class="countdown-bottom"><span>A little closer, every day.</span><span>♡</span></div></div><span class="card-spark countdown-spark">✳</span></div>
-          <div class="card-body"><div class="app-category">COUNT DOWN · LOOK FORWARD</div><h3 id="countdown-title">Daily Countdown - Event Widget</h3><p>Keep your favorite moments close. Count down to a trip, celebrate an anniversary, and make your Home Screen yours.</p><ul class="feature-tags" aria-label="Features"><li>Widgets</li><li>Reminders</li><li>Custom backgrounds</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/daily-countdown-event-widget/id1501368970" aria-label="View Daily Countdown - Event Widget on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="dailycount.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+          <div class="card-body"><div class="app-category">COUNT DOWN · LOOK FORWARD</div><h3 id="countdown-title">Daily Countdown - Event Widget</h3><p>Keep your favorite moments close. Count down to a trip, celebrate an anniversary, and make your Home Screen yours.</p><ul class="feature-tags" aria-label="Features"><li>Widgets</li><li>Reminders</li><li>Custom backgrounds</li></ul><div class="card-actions"><div class="store-badges" aria-label="Download options"><a class="store-badge" href="https://apps.apple.com/us/app/daily-countdown-event-widget/id1501368970" aria-label="View Daily Countdown - Event Widget on the App Store"><img src="assets/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.lancekinji.dailycount" aria-label="View this app on Google Play"><img src="assets/badges/google-play.svg" alt="Get it on Google Play" width="135" height="40"></a></div><div class="policy-links"><a class="policy-link" href="dailycount.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
         </article>
         <article class="app-card calculator-card" aria-labelledby="calculator-title">
           <div class="card-art scientific-art" aria-hidden="true"><span class="art-label">A LITTLE MORE CAPABLE</span><div class="math-formula">(24 × 3) + 8<span>= 80<span class="formula-star">✦</span></span></div><div class="math-modes"><span>Basic</span><span>Scientific</span><span>Currency</span></div></div>
-          <div class="card-body"><div class="app-category">SOLVE · CONVERT</div><h3 id="calculator-title">Calculator: Basic &amp; Scientific</h3><p>From quick sums to bigger questions. Basic and scientific calculations, currency conversion, and unit tools in one place.</p><ul class="feature-tags" aria-label="Features"><li>Scientific tools</li><li>Unit conversion</li><li>History</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/calculator-basic-scientific/id1521827072" aria-label="View Calculator: Basic and Scientific on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="supercalculator.html">Privacy</a><a class="policy-link" href="supercalculator_terms.html">Terms</a></div></div></div>
+          <div class="card-body"><div class="app-category">SOLVE · CONVERT</div><h3 id="calculator-title">Calculator: Basic &amp; Scientific</h3><p>From quick sums to bigger questions. Basic and scientific calculations, currency conversion, and unit tools in one place.</p><ul class="feature-tags" aria-label="Features"><li>Scientific tools</li><li>Unit conversion</li><li>History</li></ul><div class="card-actions"><div class="store-badges" aria-label="Download options"><a class="store-badge" href="https://apps.apple.com/us/app/calculator-basic-scientific/id1521827072" aria-label="View Calculator: Basic and Scientific on the App Store"><img src="assets/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.calculator.supercalculator" aria-label="View this app on Google Play"><img src="assets/badges/google-play.svg" alt="Get it on Google Play" width="135" height="40"></a></div><div class="policy-links"><a class="policy-link" href="supercalculator.html">Privacy</a><a class="policy-link" href="supercalculator_terms.html">Terms</a></div></div></div>
         </article>
         <article class="app-card currency-card" aria-labelledby="currency-title">
           <div class="card-art currency-art" aria-hidden="true"><span class="art-label">GO PLACES. ADD SOME COLOR.</span><div class="currency-coins"><span class="coin coin-dollar">$</span><span class="coin coin-euro">€</span><span class="coin coin-pound">£</span><span class="coin coin-yen">¥</span></div><p>Different currencies. Same simple idea.</p></div>
-          <div class="card-body"><div class="app-category">CONVERT · EXPLORE</div><h3 id="currency-title">Color Currency Calculator</h3><p>A colorful companion for your next destination. Calculate and convert currencies with playful themes and updated rates.</p><ul class="feature-tags" aria-label="Features"><li>150+ currencies</li><li>Colorful themes</li><li>Currency math</li></ul><div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/color-currency-calculator/id1480249933" aria-label="View Color Currency Calculator on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="unicorncurrency.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
+          <div class="card-body"><div class="app-category">CONVERT · EXPLORE</div><h3 id="currency-title">Color Currency Calculator</h3><p>A colorful companion for your next destination. Calculate and convert currencies with playful themes and updated rates.</p><ul class="feature-tags" aria-label="Features"><li>150+ currencies</li><li>Colorful themes</li><li>Currency math</li></ul><div class="card-actions"><div class="store-badges" aria-label="Download options"><a class="store-badge" href="https://apps.apple.com/us/app/color-currency-calculator/id1480249933" aria-label="View Color Currency Calculator on the App Store"><img src="assets/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.lanceking.unicorn_currency" aria-label="View this app on Google Play"><img src="assets/badges/google-play.svg" alt="Get it on Google Play" width="135" height="40"></a></div><div class="policy-links"><a class="policy-link" href="unicorncurrency.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div></div>
         </article>
         <article class="app-card media-card" id="media" aria-labelledby="media-title">
           <div class="card-art media-art" aria-hidden="true">
@@ -1538,7 +1568,21 @@ h3 {
             <h3 id="media-title">Media Converter-Video to Audio</h3>
             <p>Keep the sound. Reimagine the moment. Extract audio, convert media, and turn video clips into GIFs or Live Photos, right on your device.</p>
             <ul class="feature-tags" aria-label="Features"><li>Video to audio</li><li>GIFs &amp; Live Photos</li><li>On-device processing</li></ul>
-            <div class="card-actions"><a class="store-link" href="https://apps.apple.com/us/app/media-converter-video-to-audio/id6743954942" aria-label="View Media Converter-Video to Audio on the App Store">View on App Store <span aria-hidden="true">↗</span></a><div class="policy-links"><a class="policy-link" href="echoia.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div>
+            <div class="card-actions"><div class="store-badges" aria-label="Download options"><a class="store-badge" href="https://apps.apple.com/us/app/media-converter-video-to-audio/id6743954942" aria-label="View Media Converter-Video to Audio on the App Store"><img src="assets/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.audioconvert.mediaconvert" aria-label="View this app on Google Play"><img src="assets/badges/google-play.svg" alt="Get it on Google Play" width="135" height="40"></a></div><div class="policy-links"><a class="policy-link" href="echoia.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div>
+          </div>
+        </article>
+        <article class="app-card reader-card" id="readervox" aria-labelledby="reader-title">
+          <div class="card-art reader-art" aria-hidden="true">
+            <span class="art-label">YOUR BOOKS. YOUR VOICE.</span>
+            <div class="reader-illustration"><div class="reader-book"><span></span><span></span><span></span><span></span></div><div class="reader-listen"><span></span><span></span><span></span><span></span><span></span></div></div>
+            <p>A new rhythm for your reading.</p>
+          </div>
+          <div class="card-body">
+            <div class="app-category">READ · LISTEN · MAKE IT YOURS</div>
+            <h3 id="reader-title">ReaderVox: Text to Speech</h3>
+            <p>Your books, at your pace. Import EPUB, PDF, or TXT files, personalize your reading, and listen with on-device speech once voices and packages are installed.</p>
+            <ul class="feature-tags" aria-label="Features"><li>Read &amp; listen</li><li>Local AI voices</li><li>Notes &amp; highlights</li></ul>
+            <div class="card-actions"><span class="coming-soon">Coming soon · iPhone</span><div class="policy-links"><a class="policy-link" href="readervox.html">Privacy</a><a class="policy-link" href="user_terms.html">Terms</a></div></div>
           </div>
         </article>
       </div>
@@ -1547,5 +1591,6 @@ h3 {
     <section class="support-section shell" id="support" aria-labelledby="support-title"><div class="support-panel"><div><p class="eyebrow">WE’RE HERE TO HELP</p><h2 id="support-title">A question? An idea?<br>We’d love to hear it.</h2><p>Get in touch for app support or share what you’d like to see next.</p></div><a class="button button-dark support-button" href="mailto:colorcalculator@outlook.com">Say hello <span aria-hidden="true">↗</span><span class="support-email">colorcalculator@outlook.com</span></a><span class="support-flower" aria-hidden="true">✳</span></div></section>
   </main>
   <footer class="site-footer shell"><div><a class="brand footer-brand" href="index.html">ananta<span class="brand-dot">.</span></a><p>Apps for a brighter everyday.</p></div><div class="footer-details"><nav aria-label="Footer navigation"><a href="#support">Contact</a><a href="user_terms.html">Terms of Use</a><a href="https://apps.apple.com/us/developer/wuhan-ananta-technology-co-ltd/id1508854889">App Store <span aria-hidden="true">↗</span></a></nav><p>© 2026 Wuhan Ananta Technology Co., Ltd.</p></div></footer>
+  <p class="badge-credits shell">Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
 </body>
 </html>
